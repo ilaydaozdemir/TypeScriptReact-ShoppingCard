@@ -2,7 +2,10 @@ import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
-    <NavbarBs className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <NavbarBs
+      sticky="top"
+      className="navbar navbar-expand-lg navbar-light bg-light shadow-sm"
+    >
       <Container className="container-fluid">
         <Nav className="me-auto">
           <Nav.Link to="/" as={NavLink}>
@@ -18,7 +21,11 @@ export default function Navbar() {
             Help
           </Nav.Link>
         </Nav>
-        <Button>
+        <Button
+          style={{ width: "3.75rem", height: "3.75rem", position: "relative" }}
+          variant="outline-primary"
+          className="rounded-circle"
+        >
           <svg
             version="1.0"
             id="Layer_1"
@@ -26,7 +33,7 @@ export default function Navbar() {
             width="36px"
             height="36px"
             viewBox="0 0 64 64"
-            enable-background="new 0 0 64 64"
+            enableBackground="new 0 0 64 64"
           >
             <g>
               <g>
@@ -90,6 +97,19 @@ export default function Navbar() {
               </g>
             </g>
           </svg>
+          <div
+            className="rounded-circle bg-danger d-flex justify-content-center lign-items-center"
+            style={{
+              color: "white",
+              width: "1.5rem",
+              height: "1.5rem",
+              position: "absolute",
+              bottom: "0",
+              right: "0",
+            }}
+          >
+            5
+          </div>
         </Button>
       </Container>
     </NavbarBs>
