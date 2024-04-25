@@ -7,10 +7,14 @@ type CardItem = {
   quantity: number;
 };
 type ShoppingCardContext = {
+  openCart: () => void;
+  closeCart: () => void;
   getItem: (id: number) => number;
   increaseCart: (id: number) => void;
   decreaseCart: (id: number) => void;
   removeFromCart: (id: number) => void;
+  cartQuantity: number;
+  cartItems: CardItem[];
 };
 const ShoppingCardContext = createContext({} as ShoppingCardContext);
 export function useShoppingCard() {
@@ -18,8 +22,15 @@ export function useShoppingCard() {
 }
 
 export function ShoppingCardProvider({ children }: ShoppingCardProviderProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CardItem[]>([]);
 
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
   function getItem(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
@@ -60,7 +71,16 @@ export function ShoppingCardProvider({ children }: ShoppingCardProviderProps) {
   }
   return (
     <ShoppingCardContext.Provider
-      value={{ getItem, increaseCart, decreaseCart, removeFromCart }}
+      value={{
+        getItem,
+        increaseCart,
+        decreaseCart,
+        removeFromCart,
+        cartQuantity,
+        cartItems,
+        openCart,
+        closeCart,
+      }}
     >
       {children}
     </ShoppingCardContext.Provider>
