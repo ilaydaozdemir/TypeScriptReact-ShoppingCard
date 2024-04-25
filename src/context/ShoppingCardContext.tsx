@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { ShoppingCart } from "../components/ShoppingCart";
+import { useLocaleStorage } from "./useLocaleStorage";
 type ShoppingCardProviderProps = {
   children: ReactNode;
 };
@@ -24,7 +25,10 @@ export function useShoppingCard() {
 
 export function ShoppingCardProvider({ children }: ShoppingCardProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CardItem[]>([]);
+  const [cartItems, setCartItems] = useLocaleStorage<CardItem[]>(
+    "shopping-card",
+    []
+  );
 
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
