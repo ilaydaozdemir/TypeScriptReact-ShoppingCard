@@ -1,20 +1,58 @@
 [
   {
     "id": 1,
-    "name": "Karanlık Suların Sırrı",
-    "price": "12.33",
+    "name": "Gizli Yol",
+    "price": "12.50",
+    "textContent": "Gizli Yol, sırlarla dolu bir serüvenin kapılarını aralayarak okuyucuyu mistik bir yolculuğa davet ediyor.",
+    "author": "Ayşe Demir",
     "imgUrl": "/assets/item1.jpg"
   },
   {
     "id": 2,
-    "name": "Gökyüzündeki Yıldızlar",
-    "price": "12.33",
+    "name": "Kayıp Zaman",
+    "price": "9.99",
+    "textContent": "Kayıp Zaman, zamanın derinliklerine yolculuk ederek unutulan anıların izini sürüyor.",
+    "author": "Mehmet Akın",
     "imgUrl": "/assets/item2.jpg"
   },
   {
     "id": 3,
-    "name": "Gölgesizler",
-    "price": "12.33",
+    "name": "Rüya Kapısı",
+    "price": "15.75",
+    "textContent": "Rüya Kapısı, gerçeklik ile rüya arasında gidip gelen bir maceranın eşsiz öyküsünü anlatıyor.",
+    "author": "Fatma Yıldız",
     "imgUrl": "/assets/item3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sonsuzluk Yolu",
+    "price": "18.25",
+    "textContent": "Sonsuzluk Yolu, sonsuzluğun sırlarını keşfetmeye götüren büyülü bir hikayenin başlangıcı.",
+    "author": "Aliye Korkmaz",
+    "imgUrl": "/assets/item4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Kırık Düşler",
+    "price": "11.99",
+    "textContent": "Kırık Düşler, hayallerin ve gerçeklerin kırıldığı bir dünyada yaşanan duygusal bir serüvenin öyküsü.",
+    "author": "Mustafa Çetin",
+    "imgUrl": "/assets/item5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sessiz Şarkı",
+    "price": "14.50",
+    "textContent": "Sessiz Şarkı, sessizliğin en güçlü melodilerini duymanın ve hissetmenin hikayesidir.",
+    "author": "Zeynep Yılmaz",
+    "imgUrl": "/assets/item6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Yitik Dünya",
+    "price": "16.99",
+    "textContent": "Yitik Dünya, kaybolmuş zamanların peşinde sürükleyici bir yolculuğun başlangıcıdır.",
+    "author": "Murat Öztürk",
+    "imgUrl": "/assets/item7.jpg"
   }
 ]

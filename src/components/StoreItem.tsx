@@ -6,29 +6,47 @@ type StoreItemProps = {
   id: number;
   name: string;
   price: number;
+  author: string;
+  textContent: string;
   imgUrl: string;
 };
 
-export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
+export function StoreItem({
+  id,
+  name,
+  price,
+  author,
+  textContent,
+  imgUrl,
+}: StoreItemProps) {
   const { getItem, increaseCart, decreaseCart, removeFromCart } =
     useShoppingCard();
   const quantity = getItem(id);
   return (
     <Card className="h-100 shadow-lg p-3 mb-5 bg-body rounded">
       <Card.Img
+        className="rounded"
         variant="top"
         src={imgUrl}
         height="200px"
         style={{ objectFit: "cover" }}
       />
       <CardBody className="d-flex flex-column">
-        <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-          <span className="fs-3">{name}</span>
-          <span className="ms-2 text-muted">{formatCurrency(price)}</span>
+        <Card.Title className="d-flex justify-content-between align-items-baseline">
+          <span className="fs-4">{name}</span>
+          <div className="ms-2 text-muted">{formatCurrency(price)}</div>
         </Card.Title>
+        <span className=" fs-6 ">{author}</span>{" "}
+        <div className="text-muted fs-6 mt-4" style={{ height: "100%" }}>
+          {textContent}
+        </div>
         <div className="mt-auto">
           {quantity === 0 ? (
-            <Button className="w-100" onClick={() => increaseCart(id)}>
+            <Button
+              className="w-100 "
+              variant="light"
+              onClick={() => increaseCart(id)}
+            >
               {" "}
               + Add To Card
             </Button>
@@ -43,7 +61,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
               >
                 <Button
                   onClick={() => decreaseCart(id)}
-                  variant="outline-primary"
+                  variant="outline-success"
                   size="sm"
                 >
                   -
@@ -53,7 +71,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                 </div>
                 <Button
                   onClick={() => increaseCart(id)}
-                  variant="outline-primary"
+                  variant="outline-info"
                   size="sm"
                 >
                   +
