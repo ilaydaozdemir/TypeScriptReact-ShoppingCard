@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "name": "Book",
+    "name": "Karanlık Suların Sırrı",
     "price": "12.33",
     "imgUrl": "/assets/item1.jpg"
   },
   {
     "id": 2,
-    "name": "Book",
+    "name": "Gökyüzündeki Yıldızlar",
     "price": "12.33",
     "imgUrl": "/assets/item2.jpg"
   },
   {
     "id": 3,
-    "name": "Book",
+    "name": "Gölgesizler",
     "price": "12.33",
     "imgUrl": "/assets/item3.jpg"
   }

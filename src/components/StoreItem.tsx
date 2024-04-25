@@ -11,7 +11,7 @@ type StoreItemProps = {
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
   const quantity = 1;
   return (
-    <Card className="h-100">
+    <Card className="h-100 shadow-lg p-3 mb-5 bg-body rounded">
       <Card.Img
         variant="top"
         src={imgUrl}
@@ -20,7 +20,7 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
       />
       <CardBody className="d-flex flex-column">
         <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-          <span className="fs-2">{name}</span>
+          <span className="fs-3">{name}</span>
           <span className="ms-2 text-muted">{formatCurrency(price)}</span>
         </Card.Title>
         <div className="mt-auto">
@@ -35,15 +35,18 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                 className="d-flex align-items-center justify-content-center"
                 style={{ gap: ".5rem" }}
               >
-                <Button> - </Button>
+                <Button variant="outline-primary" size="sm">
+                  -
+                </Button>
                 <div>
-                  <span className="fs-3">{quantity}</span>in cart{" "}
+                  <span className="fs-3">{quantity}</span>in cart
                 </div>
-                <Button> + </Button>
+                <Button variant="outline-primary" size="sm">
+                  +
+                </Button>
               </div>
               <div>
-                {" "}
-                <Button variant="danger" size="sm">
+                <Button variant="outline-danger" size="sm">
                   Remove
                 </Button>
               </div>
